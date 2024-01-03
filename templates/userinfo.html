@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+</head>
+<body>
+    <img src="{{user.image_url}}" alt="No Image Found">
+    <h1>{{user.first_name}} {{user.last_name}}</h1>
+    <br>
+    <a class="button" href="/users/{{user.id}}/edit">Edit</a>
+    <br>
+    <form method="POST">
+        <button>Delete</button>
+    </form>
+</body>
+</html>
