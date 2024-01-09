@@ -1,0 +1,25 @@
+
+
+.button {
+    background-color: #2fa5db;  
+    border-radius: 5px;
+    color: white;
+    padding: .5em;
+    text-decoration: none;
+    font-size: small;
+  }
+
+.delete {
+    background-color: rgb(226, 75, 75);  
+    border-radius: 5px;
+    color: white;
+    padding: .5em;
+    text-decoration: none;
+    font-size: small;
+    border-style: none;
+  }
+
+.button_menu {
+    background-color: blueviolet;
+    display: inline;
+}

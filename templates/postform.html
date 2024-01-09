@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <title>Post Form</title>
+</head>
+<body>
+    <h1>Add Post for {{user.first_name}} {{user.last_name}}</h1>
+    <form action="" method="POST">
+        <p>Title <input type="text" name="title"></p>
+        <p>Content <textarea cols="30" rows="10" name="content"></textarea></p>
+        <a href="/users/{{user.id}}">Cancel</a>
+        <button class="button">Post</button>
+    </form>
+</body>
+</html>

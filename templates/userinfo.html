@@ -3,16 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
     <title>User Info</title>
 </head>
 <body>
-    <img src="{{user.image_url}}" alt="No Image Found">
-    <h1>{{user.first_name}} {{user.last_name}}</h1>
-    <br>
-    <a class="button" href="/users/{{user.id}}/edit">Edit</a>
-    <br>
-    <form method="POST">
-        <button>Delete</button>
-    </form>
+    <section class="profile">
+        <img src="{{user.image_url}}" alt="No Image Found">
+        <h1>{{user.first_name}} {{user.last_name}}</h1>
+    </section>
+    <div class="button_menu">
+        <a class="button" href="/users/{{user.id}}/edit">Edit</a>
+        <form method="POST">
+         <button class="delete">Delete</button>
+        </form>
+    </div>
+    <section class="post_menu">
+        <h1>Posts</h1>
+        {% if posts %}
+            {% for post in posts %}
+                <li> <a href="/posts/{{post.id}}">{{post.title}}</a></li>
+            {% endfor %}
+        {% else %}
+            <li>No Posts</li>
+        {% endif %}
+        <a class='button' href="/users/{{user.id}}/posts/new">Add Post</a>
+    </section>
 </body>
 </html>
