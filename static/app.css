@@ -20,6 +20,32 @@
   }
 
 .button_menu {
-    background-color: blueviolet;
+    display: block;
+    padding-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.tagslist {
+    display: block;
+    padding: 10px;
+}
+
+.tagslist > li {
+    background-color: #2f68db;  
+    border-radius: 5px;
+    color: white;
+    padding: .5em;
+    text-decoration: none;
+    font-size: x-small;
+    list-style: none;
     display: inline;
+
+}
+
+#timestamp {
+    font-size: xx-small;
+    color: lightslategray;
 }

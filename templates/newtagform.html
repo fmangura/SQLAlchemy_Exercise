@@ -1,22 +1,22 @@
 {% extends 'nav.html' %}
 
 {% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/app.css">
-    <title>User</title>
+    <title>Tag Form</title>
 </head>
 <body>
-    <h1>Users</h1>
-    {% for user in users %}
-        <li><a href="/users/{{user.id}}">{{user.first_name}} {{user.last_name}}</a></li>
-    {% endfor %}
-
-    <br>
-    <a class='button' href="/users/new">Add User</a>
+    <h1>Create Tag</h1>
+    <form method="POST">
+        <p>Tag: <input type="text" name="tag"></p>
+        <a href="/tags">Cancel</a>
+        <button>Add</button>
+    </form>
 </body>
 </html>
 {% endblock %}

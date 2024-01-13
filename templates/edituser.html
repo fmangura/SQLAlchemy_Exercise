@@ -1,3 +1,7 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +11,7 @@
     <title>Create User Form</title>
 </head>
 <body>
-    <h1>Edit User</h1>
+    <h1><a href="/" style="text-decoration:none">Edit User</a></h1>
     <form method="POST">
         <p>First Name: <input type="text" name="first_name"></p>
         <p>Last Name: <input type="text" name="last_name"></p>
@@ -18,3 +22,4 @@
     </form>
 </body>
 </html>
+{% endblock %}

@@ -1,3 +1,7 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +15,12 @@
     <form action="" method="POST">
         <p>Title <input type="text" name="title"></p>
         <p>Content <textarea cols="30" rows="10" name="content"></textarea></p>
+        {% for tag in tags %}
+            <li style="list-style-type: none;">{{tag.name}}<input type="checkbox" name="tag" value="{{tag.name}}"></li>
+        {% endfor %}
         <a href="/users/{{user.id}}">Cancel</a>
         <button class="button">Post</button>
     </form>
 </body>
 </html>
+{% endblock %}

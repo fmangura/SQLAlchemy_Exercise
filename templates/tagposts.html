@@ -1,0 +1,26 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <title>List of Posts for Tag</title>
+</head>
+<body>
+    <h1>{{tag.name}}</h1>
+    {% if tag.posts %}
+        {% for post in tag.posts %}
+        <a href="/posts/{{post.id}}"><li>{{post.title}}</li></a>
+        {% endfor %}
+    {% else %}
+        <p>There are no posts with this tag</p>
+    {% endif %}
+
+    <a href="/tags/{{tag.id}}/edit" class="button">Edit Tag</a>
+</body>
+</html>
+{% endblock %}

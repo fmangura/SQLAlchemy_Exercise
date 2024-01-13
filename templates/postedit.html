@@ -1,3 +1,7 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +11,21 @@
     <title>Post Form Edit</title>
 </head>
 <body>
-    <h1>Edit Post</h1>
+    <h1>Edit {{post.title}}</h1>
     <form action="" method="POST">
         <p>Title <input type="text" name="title"></p>
         <p>Content <textarea cols="30" rows="10" name="content"></textarea></p>
+        {% for tag in tags %}
+            {% if tag in post.tags %}
+                <li style="list-style-type: none;">{{tag.name}}<input type="checkbox" name="tag" value="{{tag.name}}"  checked></li>
+            {% else %}
+                <li style="list-style-type: none;">{{tag.name}}<input type="checkbox" name="tag" value="{{tag.name}}">
+                </li>
+            {% endif %}
+        {% endfor %}
         <a href="/users/{{post.user_id}}">Cancel</a>
         <button class="button">Edit</button>
     </form>
 </body>
 </html>
+{% endblock %}

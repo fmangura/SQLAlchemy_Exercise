@@ -8,17 +8,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/app.css">
-    <title>Create User Form</title>
+    <title>Edit Tag</title>
 </head>
 <body>
-    <h1><a href="/" style="text-decoration:none">Create User</a></h1>
+    <h1>Edit {{tag.name}} </h1>
     <form method="POST">
-        <p>First Name: <input type="text" name="first_name"></p>
-        <p>Last Name: <input type="text" name="last_name"></p>
-        <p>Image: <input type="url" name="img"></p>
-
-        <button>Add</button>
+        <p>Edit Tag:<input type="text" name="tag"></p>
+        <a href="/tags/{{tag.id}}">Cancel</a>
+        <button>Confirm</button>
     </form>
+    <a href="/tags/{{tag.id}}/delete">Delete Tag</a>
 </body>
 </html>
 {% endblock %}
